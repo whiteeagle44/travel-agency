@@ -5,6 +5,7 @@
 This project consists of a C++ object oriented set of classes designed for usage at a travel agency.
 
 ## Visualisation of classes
+
 ![Memory map](mind-map.svg)
 
 ## Declaration of classes
@@ -12,18 +13,19 @@ This project consists of a C++ object oriented set of classes designed for usage
 ### TravelAgency
 
 TravelAgency is the central class in the hierarchy. Its most important elements are the STL containers pointing to designated class objects, namely:
-*  vector pointing to Customer objects
-    ```cpp    
-    vector<Customer*> customers;
-    ```
-*  list pointing to Tour objects
-    ```cpp    
-    vector<Tour*> tours;
-    ```
+
+- vector pointing to Customer objects
+  ```cpp
+  vector<Customer*> customers;
+  ```
+- list pointing to Tour objects
+  ```cpp
+  list<Tour*> tours;
+  ```
 
 The vector container was chosen for storing customer list because vector provides automatic space reallocation, which allows for adding new elements easily and takes less space than a list.
 
-For storing list of tours, an STL list was decided on, as it allows for easier adding of elements in between the existing ones, than vector, which is vital, as tours are added to the right position depending upon their price. (The list is sorted in ascending order by price all the time) 
+For storing list of tours, an STL list was decided on, as it allows for easier adding of elements in between the existing ones, than vector, which is vital, as tours are added to the right position depending upon their price. (The list is sorted in ascending order by price all the time)
 
 ```cpp
 class TravelAgency {
@@ -51,13 +53,15 @@ private:
 
 ### Customer
 
-When a customer object is created, one of the parameters it is instantiated with is the pointer to tourReserved. 
+When a customer object is created, one of the parameters it is instantiated with is the pointer to tourReserved.
+
 ```cpp
 Customer(string name, Tour* tourReserved, int numOfAccompanyingAdults, int numOfChildren);
 
 ```
 
-This, as the name suggests links each of the customers with a tour they are to participate in. It also allows to calculate costs bore by each customer, which will look more less like this: 
+This, as the name suggests links each of the customers with a tour they are to participate in. It also allows to calculate costs bore by each customer, which will look more less like this:
+
 ```cpp
 int calculateMoneySpent {
     return (numOfAccompanyingAdults + 1) * &tourReserved->pricePerAdult + numOfChildren * &tourReserved->pricePerAdult * 0.5;
@@ -90,9 +94,10 @@ private:
     int moneySpent;
 };
 ```
+
 ### Tour
 
-The Tour class contains a pointer to one of the TransportCompany types: 
+The Tour class contains a pointer to one of the TransportCompany types:
 `AirplaneCompany`, `RailCompany` or `BusCompany`.
 
 Each of the tours has a main means of transport which is set in the constructor and can be changed later on.
@@ -127,7 +132,7 @@ private:
 
 ### TransportCompany: AirplaneCompany, RailCompany and BusCompany
 
-Each mode of transport has a fundamentally different technological solution, thus characteristic variables. To meet these needs, a class `TransportCompany` which unities the common factors of transport was created with three subclasses inheriting from the above class and adding their own variables. 
+Each mode of transport has a fundamentally different technological solution, thus characteristic variables. To meet these needs, a class `TransportCompany` which unities the common factors of transport was created with three subclasses inheriting from the above class and adding their own variables.
 
 #### TransportCompany
 
@@ -191,6 +196,7 @@ private:
     bool hasAC;
 };
 ```
+
 ## Example usage
 
 This is an exemplary main function content.
