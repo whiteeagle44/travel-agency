@@ -7,7 +7,6 @@ using namespace std;
 
 class TransportCompany {
 public:
-    // TransportCompany();
     TransportCompany(string name, int standard);
     string getName() const;
     void setName(string name);
@@ -27,7 +26,7 @@ public:
     AirplaneCompany(string name, int standard, int maxLuggageWeight);
     int getMaxLuggageWeight() const;
     void setMaxLuggageWeight(int maxLuggageWeight);
-    const string TYPE = "airplane Company";
+    const string TYPE = "airplane company";
 
 private:
     int maxLuggageWeight_;
@@ -40,7 +39,7 @@ public:
     void setSleepSpace(bool hasSleepSpace);
     int getNumOfSeatsInCompartment() const;
     void setNumOfSeatsInCompartment(int numOfSeatsInCompartment);
-    const string TYPE = "rail Company";
+    const string TYPE = "rail company";
 
 private:
     bool sleepSpace_;
@@ -52,7 +51,7 @@ public:
     BusCompany(string name, int standardLevel, bool AC);
     bool hasAC() const;
     void setAC(bool AC);
-    const string TYPE = "bus Company";
+    const string TYPE = "bus company";
 
 private:
     bool AC_;

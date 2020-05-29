@@ -11,7 +11,6 @@ using namespace std;
 class Customer {
 public:
     Customer(string name, Tour* reservedTour, int numberOfAccompanyingAdults, int numberOfChildren);
-    // ~Customer();
     void print();
     int calculateMoneySpent(); // (numberOfAccompanyingAdults + 1) * tour price per adult + numberOfChildren * (tour price per adult * 0.5)
     string getName() const;

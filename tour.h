@@ -9,7 +9,6 @@ using namespace std;
 class Tour {
 public:
     Tour(string destination, int lengthInDays, int pricePerAdult, TransportCompany& transportCompany);
-    // ~Tour();
     void print();
     string getDestination() const;
     void setDestination(string destinations);
