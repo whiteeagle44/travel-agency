@@ -26,7 +26,7 @@ or on Windows with:
 
 ## Visualisation of classes
 
-![Memory map](mind-map.png)
+![Memory map](./assets/mind-map.png)
 
 ## Declaration of classes
 
