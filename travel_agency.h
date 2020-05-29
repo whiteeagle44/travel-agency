@@ -2,8 +2,8 @@
 #include <list>
 #include <string>
 
-#include <./customer.h>
-#include <./tour.h>
+#include "./customer.h"
+#include "./tour.h"
 
 using namespace std;
 
@@ -11,22 +11,28 @@ using namespace std;
 
 class TravelAgency {
 public:
-    int calculateProfit(); // returns sum of all customers' moneySpent - averageSalary * numOfEmployees
-    void printToursBelowPrice(int maxPrice); // prints tours with price under maxPrice
-    string getCountryOfOrigin();
+    TravelAgency(string name, string countryOfOrigin, string internetDomain, int numberOfEmployees, int averageSalary);
+    void printProfit() const; // prints sum of all customers' moneySpent - averageSalary * numOfEmployees
+    void printTours() const;
+    void printToursBelowPrice(int maxPrice) const; // prints tours with price under maxPrice
+    void printCustomers() const;
+    string getName() const;
+    void setName(string name);
+    string getCountryOfOrigin() const;
     void setCountryOfOrigin(string countryOfOrigin);
-    string getInternetDomain();
+    string getInternetDomain() const;
     void setInternetDomain(string internetDomain);
-    int getAvgSalary();
-    void setAvgSalary(int avgSalary);
-    int getNumOfEmployees();
-    void setNumOfEmployees(int numOfEmployees);
-    vector<Customer*> customers;
-    list<Tour*> tours;
+    int getAverageSalary() const;
+    void setAverageSalary(int averageSalary);
+    int getNumberOfEmployees() const;
+    void setNumberOfEmployees(int numberOfEmployees);
+    vector<Customer> customers;
+    vector<Tour> tours;
 
 private:
-    string countryOfOrigin;
-    string internetDomain;
-    int avgSalary;
-    int numOfEmployees;
+    string name_;
+    string countryOfOrigin_;
+    string internetDomain_;
+    int numberOfEmployees_;
+    int averageSalary_;
 };

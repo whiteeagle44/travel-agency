@@ -7,47 +7,53 @@ using namespace std;
 
 class TransportCompany {
 public:
-    TransportCompany(string name, int standardLevel);
-    int getStandard();
+    // TransportCompany();
+    TransportCompany(string name, int standard);
+    string getName() const;
+    void setName(string name);
+    string getStandard() const;
     enum Standard { budget,
         decent,
         luxurious };
-    int setStandard(TransportCompany::Standard standard);
+    void setStandard(TransportCompany::Standard standard);
 
 protected:
-    string name;
-    int standardLevel = decent;
+    string name_;
+    int standard_ = decent;
 };
 
 class AirplaneCompany : public TransportCompany {
 public:
-    AirplaneCompany(string name, int standardLevel, int maxLuggageWeight);
-    int GetMaxLuggageWeight();
-    void SetMaxLuggageWeight(int maxLuggageWeight);
+    AirplaneCompany(string name, int standard, int maxLuggageWeight);
+    int getMaxLuggageWeight() const;
+    void setMaxLuggageWeight(int maxLuggageWeight);
+    const string TYPE = "airplane Company";
 
 private:
-    int maxLuggageWeight;
+    int maxLuggageWeight_;
 };
 
 class RailCompany : public TransportCompany {
 public:
-    RailCompany(string name, int standardLevel, int isSleepSpaceProvided, int numOfSeatsInCompartment);
-    bool GetIsSleepSpaceProvided();
-    void SetIsSleepSpaceProvided(bool isSleepSpaceProvided);
-    int GetNumOfSeatsInCompartment() const;
-    void SetNumOfSeatsInCompartment(int numOfSeatsInCompartment);
+    RailCompany(string name, int standardLevel, int sleepSpace, int numOfSeatsInCompartment);
+    bool hasSleepSpace() const;
+    void setSleepSpace(bool hasSleepSpace);
+    int getNumOfSeatsInCompartment() const;
+    void setNumOfSeatsInCompartment(int numOfSeatsInCompartment);
+    const string TYPE = "rail Company";
 
 private:
-    bool isSleepSpaceProvided;
-    int numOfSeatsInCompartment;
+    bool sleepSpace_;
+    int numOfSeatsInCompartment_;
 };
 
 class BusCompany : public TransportCompany {
 public:
-    BusCompany(string name, int standardLevel, bool hasAC);
-    bool GetHasAC() const;
-    void SetHasAC(bool hasAC);
+    BusCompany(string name, int standardLevel, bool AC);
+    bool hasAC() const;
+    void setAC(bool AC);
+    const string TYPE = "bus Company";
 
 private:
-    bool hasAC;
+    bool AC_;
 };
