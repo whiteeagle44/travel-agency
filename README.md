@@ -8,10 +8,10 @@ This project consists of a C++ object oriented set of classes designed for usage
 
 Screenshot of the program with sample data run in the console can be seen below.
 
-![Memory map](example-console-log.jpg)
+![Memory map](./assets/example-console-log.jpg)
 
 ## Compilation
-Given that g++ is installed the program can be compiled with the following command:
+Given that g++ is installed, the program can be compiled with the following command:
 ```
 g++ -std=c++17 -o travel-agency main.cpp transport.cpp travel_agency.cpp tour.cpp customer.cpp
 ```
@@ -43,7 +43,7 @@ TravelAgency is the central class in the hierarchy. Its most important elements 
   vector<Tour> tours;
   ```
 
-The vector container was chosen for storing customer list because vector provides automatic space reallocation, which allows for adding new elements easily and takes less space than a list.
+The vector container was chosen because vector provides automatic space reallocation, which allows for adding new elements easily and takes less space than a list.
 
 ```cpp
 class TravelAgency {
