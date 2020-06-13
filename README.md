@@ -1,6 +1,6 @@
 # Travel agency
 
-*Project description was updated to reflect changes made to the codebase.*
+_Project description is up to date with the code base. A detailed description of what changed compared to the original design can be found [here](https://github.com/whiteeagle44/travel-agency/blob/master/initial-and-current-design-compared.md)._
 
 ## Introduction
 
@@ -11,15 +11,21 @@ Screenshot of the program with sample data run in the console can be seen below.
 ![Memory map](./assets/example-console-log.jpg)
 
 ## Compilation
+
 Given that g++ is installed, the program can be compiled with the following command:
+
 ```
 g++ -std=c++17 -o travel-agency main.cpp transport.cpp travel_agency.cpp tour.cpp customer.cpp
 ```
+
 and then run on Linux with:
+
 ```
 .\travel-agency.out
 ```
+
 or on Windows with:
+
 ```
 .\travel-agency.exe
 ```
@@ -101,7 +107,7 @@ class Customer {
 public:
     Customer(string name, Tour* reservedTour, int numberOfAccompanyingAdults, int numberOfChildren);
     void print();
-    int calculateMoneySpent(); 
+    int calculateMoneySpent();
     string getName() const;
     void setName(string name);
     Tour* getReservedTour() const;
@@ -295,7 +301,7 @@ This is an exemplary main function content.
 
 ```
 
-## Miscellaneous  
+## Miscellaneous
 
 This [C++ programming convention](http://geosoft.no/development/cppstyle.html) is utilized.
 
